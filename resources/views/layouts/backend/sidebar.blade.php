@@ -47,6 +47,14 @@
                <li><a href="{{ route('creativepanel.index') }}">All Creative Panel</a></li>
             </ul>
          </li>
+         <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+               class="icon icon-single-04"></i><span class="nav-text">Manage Vanue</span></a>
+            <ul aria-expanded="false">
+               <li><a href="{{ route('vanue.create') }}">Vanue Panel</a></li>
+               <li><a href="{{ route('vanue.index') }}">All Vanue Panel</a></li>
+            </ul>
+         </li>
           {{-- <li class="nav-label">Apps</li>
           <li>
              <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
