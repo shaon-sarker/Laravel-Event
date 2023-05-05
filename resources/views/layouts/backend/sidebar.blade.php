@@ -61,6 +61,7 @@
             <ul aria-expanded="false">
                <li><a href="{{ route('service.create') }}">Service Panel</a></li>
                <li><a href="{{ route('service.index') }}">All Service Panel</a></li>
+               <li><a href="{{ route('vanues.list') }}">Vanue List</a></li>
             </ul>
          </li>
           {{-- <li class="nav-label">Apps</li>

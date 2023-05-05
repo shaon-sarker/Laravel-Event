@@ -28,8 +28,14 @@
                                 @forelse ($services_list as $services)
                                 <tr>
                                     <td>{{ $loop->index+1 }}</td>
-                                    <td>{{ $services->vanue_id }}</td>
-                                    <td>{!! $services->service_list_name !!}</td>
+                                    <td>{{ App\Models\Vanue::find($services->vanue_id)->vanue_name }}</td>
+                                    <td>
+                                        <ol>
+                                            <li>
+                                                {!! $services->service_list_name !!}
+                                            </li>
+                                        </ol>
+                                    </td>
                                     <td>{{ $services->service_price }}</td>
                                     <td>
                                     @if ($services->service_type == 'Basic')
