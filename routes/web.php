@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\CateringController;
 use App\Http\Controllers\backend\CreativePanelController;
 use App\Http\Controllers\backend\DecorationController;
+use App\Http\Controllers\backend\ServiceController;
 use App\Http\Controllers\backend\VanueController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,8 @@ Route::resource('/catering',CateringController::class);
 Route::resource('/decoration',DecorationController::class);
 Route::resource('/creativepanel',CreativePanelController::class);
 Route::resource('/vanue',VanueController::class);
+Route::resource('/service',ServiceController::class);
+
 
 
 

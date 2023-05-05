@@ -55,6 +55,14 @@
                <li><a href="{{ route('vanue.index') }}">All Vanue Panel</a></li>
             </ul>
          </li>
+         <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+               class="icon icon-single-04"></i><span class="nav-text">Manage Services</span></a>
+            <ul aria-expanded="false">
+               <li><a href="{{ route('service.create') }}">Service Panel</a></li>
+               <li><a href="{{ route('service.index') }}">All Service Panel</a></li>
+            </ul>
+         </li>
           {{-- <li class="nav-label">Apps</li>
           <li>
              <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
