@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\CateringController;
 use App\Http\Controllers\backend\CreativePanelController;
 use App\Http\Controllers\backend\DecorationController;
+use App\Http\Controllers\backend\JobPortalController;
 use App\Http\Controllers\backend\SearchController;
 use App\Http\Controllers\backend\ServiceController;
 use App\Http\Controllers\backend\VanueController;
@@ -43,6 +44,8 @@ Route::resource('/decoration',DecorationController::class);
 Route::resource('/creativepanel',CreativePanelController::class);
 Route::resource('/vanue',VanueController::class);
 Route::resource('/service',ServiceController::class);
+Route::resource('/jobportal',JobPortalController::class);
+
 
 
 Route::get('/vanuelist',[SearchController::class,'vanuelist'])->name('vanues.list');

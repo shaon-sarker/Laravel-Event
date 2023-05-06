@@ -64,6 +64,14 @@
                <li><a href="{{ route('vanues.list') }}">Vanue List</a></li>
             </ul>
          </li>
+         <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+               class="icon icon-single-04"></i><span class="nav-text">Manage JobPortal</span></a>
+            <ul aria-expanded="false">
+               <li><a href="{{ route('jobportal.create') }}">Jobportal Panel</a></li>
+               <li><a href="{{ route('jobportal.index') }}">All JobPost</a></li>
+            </ul>
+         </li>
           {{-- <li class="nav-label">Apps</li>
           <li>
              <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
