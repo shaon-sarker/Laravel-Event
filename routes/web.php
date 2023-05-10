@@ -25,9 +25,7 @@ Route::get('/', function () {
     return view('welcome');
     // return view('layouts.backend.dashboard');
 });
-// Route::get('/profile',function(){
-//     return view('backend.profile.index');
-// });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -45,9 +43,6 @@ Route::resource('/creativepanel',CreativePanelController::class);
 Route::resource('/vanue',VanueController::class);
 Route::resource('/service',ServiceController::class);
 Route::resource('/jobportal',JobPortalController::class);
-
-
-
 Route::get('/vanuelist',[SearchController::class,'vanuelist'])->name('vanues.list');
 Route::get('/servicelist/list',[SearchController::class,'servicelist'])->name('services.list');
 
