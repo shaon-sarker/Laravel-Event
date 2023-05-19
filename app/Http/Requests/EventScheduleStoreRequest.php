@@ -11,7 +11,7 @@ class EventScheduleStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class EventScheduleStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'vanue_id' => 'required',
+            'service_id'=>'required',
+            'event_schedule_time'=>'required',
+            'start_date'=>'required',
+            'end_date'=>'required',
         ];
     }
 }

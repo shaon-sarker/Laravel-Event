@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('backend/vendor/owl-carousel/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/vendor/owl-carousel/css/owl.theme.default.min.css') }}">
     <link href="{{ asset('backend/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet') }}">
+    <link rel="stylesheet" href="{{ asset('backend/css/pricetable.css') }}">
     <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
     @stack('admin.css')
 </head>

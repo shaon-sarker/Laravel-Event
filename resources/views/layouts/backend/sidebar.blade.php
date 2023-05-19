@@ -1,6 +1,6 @@
 <!--**********************************
    Sidebar start
-   ***********************************-->
+***********************************-->
    <div class="quixnav">
     <div class="quixnav-scroll">
        <ul class="metismenu" id="menu">
@@ -61,7 +61,7 @@
             <ul aria-expanded="false">
                <li><a href="{{ route('service.create') }}">Service Panel</a></li>
                <li><a href="{{ route('service.index') }}">All Service Panel</a></li>
-               <li><a href="{{ route('vanues.list') }}">Vanue List</a></li>
+               <li><a href="{{ route('vanues.list') }}">Service List</a></li>
             </ul>
          </li>
          <li>
@@ -70,6 +70,15 @@
             <ul aria-expanded="false">
                <li><a href="{{ route('jobportal.create') }}">Jobportal Panel</a></li>
                <li><a href="{{ route('jobportal.index') }}">All JobPost</a></li>
+            </ul>
+         </li>
+
+         <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+               class="icon icon-single-04"></i><span class="nav-text">Manage EventSchule</span></a>
+            <ul aria-expanded="false">
+               <li><a href="{{ route('event.create') }}">EventSchule Panel</a></li>
+               {{-- <li><a href="{{ route('event.index') }}">All EventSchule</a></li> --}}
             </ul>
          </li>
           {{-- <li class="nav-label">Apps</li>
@@ -185,4 +194,4 @@
  </div>
  <!--**********************************
     Sidebar end
-    ***********************************-->
+***********************************-->

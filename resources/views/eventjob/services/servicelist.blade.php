@@ -3,7 +3,6 @@
 @push('admin.css')
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('backend/css/pricetable.css') }}">
 @endpush
 
 <div class="content-body">
@@ -49,7 +48,7 @@
         @foreach ($service_list as $item)
         <div class="pricing-table">
 			<h3 class="pricing-title">{{ $item->service_type }}</h3>
-			<div class="price">TK {{ $item->service_price }}</div>
+			<div class="price text-white">TK {{ $item->service_price }}</div>
 			<!-- Lista de Caracteristicas / Propiedades -->
 			<ul class="table-list">
 				<li>{{ App\Models\Vanue::find($item->vanue_id)->vanue_name }}  Restaurent Name</li>
