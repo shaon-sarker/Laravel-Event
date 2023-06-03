@@ -31,7 +31,7 @@
                                     <td>{{ $vanue->vanue_name }}</td>
                                     <td>{{ $vanue->address }}</td>
                                     <td><span class="badge badge-pill badge-secondary">{{ $vanue->vanue_type }}</span></td>
-                                    <td><span><a href="{{ $vanue->location }}" class="badge badge-pill badge-success">Google Map</a></span>
+                                    <td><span><a target="_blank" href="{{ $vanue->location }}" class="badge badge-pill badge-success">Google Map</a></span>
                                     </td>
                                     <td>
                                         <a href="{{ route('vanue.edit',$vanue->id) }}" class="btn btn-sm btn-dark"><i class="fa fa-pencil">Edit</i></a>

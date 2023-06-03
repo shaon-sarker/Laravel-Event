@@ -103,12 +103,18 @@
                                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 text-danger" />
                                             
                                         </div>
+                                        <div class="form-group">
+                                            {{-- <label class="text-dark"><strong>Role</strong></label> --}}
+                                            <input type="hidden" id="password_confirmation"  name="role" required autocomplete="new-password" class="form-control" value="customer">
+                                            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 text-danger" />
+                                            
+                                        </div>
                                         <div class="text-center mt-4">
                                             <button type="submit" class="btn btn-primary btn-block">Sign up</button>
                                         </div>
                                     </form>
                                     <div class="new-account mt-3">
-                                        <p class="text-dark">Already have an account? <a class="text-primary" href="page-login.html">Sign in</a></p>
+                                        <p class="text-dark">Already have an account? <a class="text-primary" href="{{ route('login') }}">Sign in</a></p>
                                     </div>
                                 </div>
                             </div>

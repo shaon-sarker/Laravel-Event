@@ -6,21 +6,20 @@
        <ul class="metismenu" id="menu">
           <li class="nav-label first">Main Menu</li>
           <li>
-             <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+             <a class="has-arrow" href="{{  route('dashboard')  }}" href="javascript:void()" aria-expanded="false"><i
                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-             <ul aria-expanded="false">
+             {{-- <ul aria-expanded="false">
                 <li><a href="./index.html">Dashboard 1</a></li>
                 <li><a href="./index2.html">Dashboard 2</a></li>
-             </ul>
+             </ul> --}}
           </li>
           <li>
             <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                class="icon icon-single-04"></i><span class="nav-text">Manage People</span></a>
             <ul aria-expanded="false">
                <li><a href="./index.html">Customer</a></li>
-               <li><a href="./index.html">All Customer</a></li>
-               <li><a href="./index.html">Event Organizer</a></li>
-               <li><a href="./index2.html">All Event Organizer</a></li>
+               <li><a href="{{ route('eventorganaizer.create') }}">Event Organizer</a></li>
+               <li><a href="{{ route('eventorganaizer.index') }}">All Event Organizer</a></li>
             </ul>
          </li>
          <li>

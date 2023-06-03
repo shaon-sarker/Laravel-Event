@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\CateringController;
 use App\Http\Controllers\backend\CreativePanelController;
 use App\Http\Controllers\backend\DecorationController;
+use App\Http\Controllers\backend\EventOrganaizerController;
 use App\Http\Controllers\backend\EventScheduleController;
 use App\Http\Controllers\backend\JobPortalController;
 use App\Http\Controllers\backend\SearchController;
@@ -48,6 +49,8 @@ Route::get('/vanuelist',[SearchController::class,'vanuelist'])->name('vanues.lis
 Route::get('/servicelist/list',[SearchController::class,'servicelist'])->name('services.list');
 Route::get('/eventschule',[EventScheduleController::class,'create'])->name('event.create');
 Route::post('/eventschule/insert',[EventScheduleController::class,'store'])->name('event.store');
+Route::resource('/eventorganaizer',EventOrganaizerController::class);
+
 
 
 
