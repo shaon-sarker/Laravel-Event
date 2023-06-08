@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="form-group">
                                             {{-- <label class="text-dark"><strong>Role</strong></label> --}}
-                                            <input type="hidden" id="password_confirmation"  name="role" required autocomplete="new-password" class="form-control" value="customer">
+                                            <input type="hidden" name="role" required autocomplete="new-password" class="form-control" value="customer">
                                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 text-danger" />
                                             
                                         </div>

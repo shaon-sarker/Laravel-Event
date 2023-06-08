@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\backend\CateringController;
 use App\Http\Controllers\backend\CreativePanelController;
+use App\Http\Controllers\backend\CustomerController;
+use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\DecorationController;
 use App\Http\Controllers\backend\EventOrganaizerController;
 use App\Http\Controllers\backend\EventScheduleController;
@@ -27,11 +29,7 @@ Route::get('/', function () {
     return view('welcome');
     // return view('layouts.backend.dashboard');
 });
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -45,11 +43,18 @@ Route::resource('/creativepanel',CreativePanelController::class);
 Route::resource('/vanue',VanueController::class);
 Route::resource('/service',ServiceController::class);
 Route::resource('/jobportal',JobPortalController::class);
+Route::resource('/eventorganaizer',EventOrganaizerController::class);
+Route::resource('/customer',CustomerController::class);
+
+
 Route::get('/vanuelist',[SearchController::class,'vanuelist'])->name('vanues.list');
 Route::get('/servicelist/list',[SearchController::class,'servicelist'])->name('services.list');
 Route::get('/eventschule',[EventScheduleController::class,'create'])->name('event.create');
 Route::post('/eventschule/insert',[EventScheduleController::class,'store'])->name('event.store');
-Route::resource('/eventorganaizer',EventOrganaizerController::class);
+
+
+
+
 
 
 

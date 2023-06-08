@@ -1,39 +1,35 @@
-{{-- <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout> --}}
 @extends('layouts.backend.app')
 @section('content')
-
 <!--**********************************
             Content body start
-        ***********************************-->
+***********************************-->
         <div class="content-body">
             <!-- row -->
             <div class="container-fluid">
+                @if (Auth::user()->role == 'admin')
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
                         <div class="card">
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
-                                    <div class="stat-text">Today Expenses </div>
-                                    <div class="stat-digit"> <i class="fa fa-usd"></i>8500</div>
+                                    <div class="stat-text">Total Catering</div>
+                                    <div class="stat-digit">{{ $total_caterings }}</div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Creative Panel</div>
+                                    <div class="stat-digit">{{ $total_creative_panels }}</div>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-success w-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar progress-bar-dark w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
@@ -42,11 +38,11 @@
                         <div class="card">
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
-                                    <div class="stat-text">Income Detail</div>
-                                    <div class="stat-digit"> <i class="fa fa-usd"></i>7800</div>
+                                    <div class="stat-text">Total Decoration</div>
+                                    <div class="stat-digit">{{ $total_decorations }}</div>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-primary w-75" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar progress-bar-success w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
@@ -55,11 +51,28 @@
                         <div class="card">
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
-                                    <div class="stat-text">Task Completed</div>
-                                    <div class="stat-digit"> <i class="fa fa-usd"></i> 500</div>
+                                    <div class="stat-text">Total JobPost</div>
+                                    <div class="stat-digit">{{  $total_jobportals }}</div>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-warning w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar progress-bar-primary w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                </div>             
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Servic </div>
+                                    <div class="stat-digit">{{ $total_services }}</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
@@ -68,8 +81,34 @@
                         <div class="card">
                             <div class="stat-widget-two card-body">
                                 <div class="stat-content">
-                                    <div class="stat-text">Task Completed</div>
-                                    <div class="stat-digit"> <i class="fa fa-usd"></i>650</div>
+                                    <div class="stat-text">Total Vanues</div>
+                                    <div class="stat-digit">{{  $total_vanues }}</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Customer</div>
+                                    <div class="stat-digit">{{ $total_customers }}</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-dark w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Event Organizer</div>
+                                    <div class="stat-digit">{{ $total_eventorganizers }}</div>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-danger w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
@@ -80,6 +119,68 @@
                     </div>
                     <!-- /# column -->
                 </div>
+                @elseif (Auth::user()->role == 'event_org')
+                    <h1 class="bg-dark text-white p-5 text-center">Welcome to {{ Auth::user()->name }}</h1>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Catering</div>
+                                    <div class="stat-digit">{{ $total_caterings }}</div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Creative Panel</div>
+                                    <div class="stat-digit">{{ $total_creative_panels }}</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-dark w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Decoration</div>
+                                    <div class="stat-digit">{{ $total_decorations }}</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total JobPost</div>
+                                    <div class="stat-digit">{{  $total_jobportals }}</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-primary w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div> --}}
+                    <!-- /# column -->
+                </div>
+                @else
+                <h1 class="bg-dark text-white p-5 text-center">Welcome to {{ Auth::user()->name }}</h1>
+                @endif
+
                 <div class="row">
                     <div class="col-xl-8 col-lg-8 col-md-8">
                         <div class="card">
@@ -115,7 +216,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="card-header">
@@ -587,12 +688,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
-        <!--**********************************
+<!--**********************************
             Content body end
-        ***********************************-->
+***********************************-->
 @endsection
 
