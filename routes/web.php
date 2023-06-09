@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\EventScheduleController;
 use App\Http\Controllers\backend\JobPortalController;
 use App\Http\Controllers\backend\SearchController;
 use App\Http\Controllers\backend\ServiceController;
+use App\Http\Controllers\backend\SmsController;
 use App\Http\Controllers\backend\VanueController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,9 @@ Route::get('/vanuelist',[SearchController::class,'vanuelist'])->name('vanues.lis
 Route::get('/servicelist/list',[SearchController::class,'servicelist'])->name('services.list');
 Route::get('/eventschule',[EventScheduleController::class,'create'])->name('event.create');
 Route::post('/eventschule/insert',[EventScheduleController::class,'store'])->name('event.store');
+Route::get('/sms',[SmsController::class,'index'])->name('sms.create');
+Route::get('/sms/info',[SmsController::class,'show'])->name('sms.info');
+
 
 
 

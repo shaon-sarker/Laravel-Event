@@ -77,6 +77,25 @@
                {{-- <li><a href="{{ route('event.index') }}">All EventSchule</a></li> --}}
             </ul>
          </li>
+         <li>
+            <a href="#" href="javascript:void()" aria-expanded="false"><i
+               class="icon icon-single-04"></i><span class="nav-text">Order Info</span></a>
+         </li>
+         <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+               class="icon icon-single-04"></i><span class="nav-text">SMS</span></a>
+            <ul aria-expanded="false">
+               <li><a href="{{ route('sms.create') }}">Send Sms</a></li>
+               <li><a href="{{ route('sms.info') }}">Sms Info</a></li>
+            </ul>
+         </li>
+         <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+               class="icon icon-single-04"></i><span class="nav-text">Settings</span></a>
+            <ul aria-expanded="false">
+               <li><a href="{{ route('event.create') }}">Database Backup</a></li>
+            </ul>
+         </li>
        </ul>
        @elseif (Auth::user()->role == 'event_org')
        <ul class="metismenu" id="menu">
@@ -172,4 +191,4 @@
  </div>
  <!--**********************************
     Sidebar end
-***********************************-->
+***********************************
